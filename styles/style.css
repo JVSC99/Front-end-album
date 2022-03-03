@@ -1,0 +1,182 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.avatar{
+    width: 1.875rem;
+    border-radius: 50%;
+}
+
+.avatar-group {
+    display: inline-block;
+    line-height: 1;
+}
+
+.avatar-xs{
+    position: relative;
+    display: inline-flex;
+}
+
+.icon{
+    width: 3rem;
+    border-radius: 30%;
+}
+
+.badge-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    display: flex;
+}
+
+body{
+    background-image: linear-gradient(black,purple);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+bg-purple{
+    background-color: blueviolet;
+}
+
+.card-rounded{
+    border-radius: .75rem;
+}
+
+.table td{
+    font-size: .8125rem;
+}
+
+.td-no-avatar{
+    padding-top: 1.4rem;
+}
+
+.td-center{
+    height: 1.875rem;
+    align-items: center;
+    display: flex;
+}
+
+.td-end{
+    height: 2.875rem;
+    align-items: end;
+    display: flex;
+    padding: 12px;
+}
+
+.text-sm {
+    font-size: .875rem;
+}
+
+.text-xsm {
+    font-size: .575rem;
+}
+
+.text-subtitle{
+    font-size: .675rem;
+}
+
+.text-xsm td{
+    font-size: .575rem;
+}
+
+.container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+#box-login{
+    background-color: white;
+    width: 60vw;
+    height: 58vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-input{
+    height: 80%;
+    width:379px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    flex-direction: column;
+}
+
+.input-login{
+    border: 1px solid gray;
+    width: 80%;
+    height: 15%;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#button-login{
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    width: 85%;
+    height: 15%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#load{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    
+}
+
+#loading{
+    z-index: 100;
+    animation: load 1s infinite;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: white;
+        
+}
+
+.mb-6{
+    margin-bottom: 24px;
+}
+
+
+
+@keyframes load{
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+.no-border{
+    border: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: blueviolet;
+    height: 20px;
+}
