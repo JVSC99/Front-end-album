@@ -28,6 +28,6 @@ function Logar(){
 function renderMenu(){
     containerLogin.innerHTML = ""
     body.style.backgroundImage = 'linear-gradient(gray,gray)'
-    window.location.href = "file:///C:/Users/jvsc7/OneDrive/%C3%81rea%20de%20Trabalho/Floow/principal.html#"
+    window.location.href = "https://jvsc99.github.io/principal"
 
 }
