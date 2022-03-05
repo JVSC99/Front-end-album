@@ -13,11 +13,12 @@ document.addEventListener("keypress", function(e) {
 function Logar(){
 
     if((login.value === "user@gmail.com") && (password.value === "1234")){
-        alert('logado')
+        
         containerLogin.innerHTML = "<div id='load'> <div id='loading'></div></div>"; 
         setTimeout(function(){
             renderMenu();
-        },2000)
+        },10000)
+        alert('logado')
     }else{
         alert("Login ou senha incorreto")
     }
@@ -27,5 +28,5 @@ function Logar(){
 function renderMenu(){
     containerLogin.innerHTML = ""
     body.style.backgroundImage = 'linear-gradient(gray,gray)'
-    
+
 }

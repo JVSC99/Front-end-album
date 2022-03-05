@@ -12,6 +12,13 @@ a{
     border-radius: 50%;
 }
 
+button{
+    padding: 2px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: transparent;
+    margin: 0%;
+}
 .avatar-group {
     display: inline-block;
     line-height: 1;
