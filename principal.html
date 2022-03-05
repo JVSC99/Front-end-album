@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Hello, world!</title>
+    <title>Floow manager</title>
   </head>
   <body style="background-image: linear-gradient(#f9f9f9, #f9f9f9)">
     <div class="container-fluid">
@@ -67,39 +67,72 @@
             <a href="#" class="nav-brand text-decoration-none text-dark text-sm">
               Curso</a
             >
-            <div class="modal fade" id="exampleModalPopovers" tabindex="-1" aria-labelledby="exampleModalPopoversLabel" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalPopoversLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header text-center d-block">
+                      <h5 id="staticBackdropLabel">Questionário diário</h5>
                     </div>
-                    <div class="modal-body">
-                      <h5>Popover in a modal</h5>
-                      <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="" data-bs-content="Popover body content is set in this attribute." data-bs-container="#exampleModalPopovers" data-bs-original-title="Popover title">button</a> triggers a popover on click.</p>
-                      <hr>
-                      <h5>Tooltips in a modal</h5>
-                      <p><a href="#" class="tooltip-test" title="" data-bs-container="#exampleModalPopovers" data-bs-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-bs-container="#exampleModalPopovers" data-bs-original-title="Tooltip">that link</a> have tooltips on hover.</p>
+                    <div class="modal-body ">
+                        <div class="text-center mx-5">
+                            <h5>Você trabalhou durante ...</h5>
+                            <h1 id="time">00:00:00</h1>
+                            <br>
+                            <h5> Acabou o expediente? Partiu ...</h5>
+                        </div>
+                        <div class="mx-5 me-2" >
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label text-start" for="exampleRadios1">
+                                Férias
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label text-start" for="exampleRadios1">
+                                Tomar uma
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label text-start" for="exampleRadios1">
+                                Cama
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label text-start" for="exampleRadios1">
+                                Cineminha
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label text-start" for="exampleRadios1">
+                                Comer
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+
+                    <div class="modal-footer d-flex justify-content-center">
+                      <button type="button" class="btn btn-primary" >Bater o ponto</button>
+                      <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="pauseOFF()"></button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="bd-example">
-                <button id="date" type="button" class="text-sm" data-bs-toggle="modal" data-bs-target="#exampleModalPopovers">
-                  0:00
+                <button id="date" type="button" class="text-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="pause()">
+                  00:00:00
                 </button>
               </div>
             <a href="#" class="nav-item text-decoration-none text-dark text-sm">EU</a>
           </nav>
-          <div class="container-fluid p-5" style="background-color: #f9f9f9">
+          <div class="container-fluid p-5 " style="background-color: #f9f9f9">
             <div class="row g-6 mb-6">
               <div class="col-md-8 mb-3">
                 <div class="card card-rounded no-border shadow-sm" >
-                  <div class="card-header d-flex align-items-center bg-white" style="border-radius: 0.75rem 0.75rem 0px 0px;">
+                  <div class="card-header d-flex align-items-center bg-white" style="padding: 1.1rem 1rem 0;border-radius: 0.75rem 0.75rem 0px 0px;border-bottom: 0px ;">
                     <h6>Burndown</h6>
                   </div>
                   <div  class="p-2">
@@ -109,11 +142,11 @@
               </div>
               <div class="col-md-4 pt-lg  pt-md-0">
                 <div class="card card-rounded no-border h-full shadow-sm">
-                  <div class="card-body">
+                  <div class="card-body" style="max-height: 405px;" >
                     <div class="card-title d-flex align-items-center text-sm">
                       <h6>Melhores Perfomaces</h6>
                     </div>
-                    <div class="list-group gap-2">
+                    <div class="list-group gap-2 px-2" style="overflow-y:scroll;max-height:350px;">
                         <div class="list-group-item d-flex align-items-center border rounded ">
                             <div class="me-4">
                                 <div class="rounded-circle">
@@ -122,7 +155,7 @@
                             </div>
                             <div class="flex-fill">
                                 <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
-                                <span class="d-block text-sm text-muted text-sm">Dev. Front End</span>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center border rounded ">
@@ -133,7 +166,7 @@
                             </div>
                             <div class="flex-fill">
                                 <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
-                                <span class="d-block text-sm text-muted text-sm">Dev. Front End</span>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
                             </div>
                         </div>
                         <div class="list-group-item d-flex align-items-center border rounded ">
@@ -144,9 +177,87 @@
                             </div>
                             <div class="flex-fill">
                                 <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
-                                <span class="d-block text-sm text-muted text-sm">Dev. Front End</span>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
                             </div>
                         </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border rounded ">
+                            <div class="me-4">
+                                <div class="rounded-circle">
+                                    <img class="avatar"src="imagens/user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 font-semibold mb-1 text-sm">João Victor</a>
+                                <span class="d-block text-sm text-muted text-xsm">Dev. Front End</span>
+                            </div>
+                        </div>
+                        
                         
                     </div>
                     
@@ -234,8 +345,8 @@
                 <div class="card-header border-bottom pt-3 pb-3 " style="border-radius: 0.75rem 0.75rem 0px 0px;" >
                     <h6 class="mb-0">Ultmos projetos</h6>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-hover table-nowrap" align="center">
+                <div class="table-responsive" style="max-height: 300px;">
+                    <table class="table table-hover table-nowrap" >
                         <thead class="table-light">
                             <tr>
                                 <th scope="col" class="text-subtitle">Name</th>
@@ -246,7 +357,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="max-height: 500px;">
                             
                             <tr class="text-xsm">
                                 <td>
@@ -276,7 +387,7 @@
                                         <div class="d-flex align-items-center "> 
                                             <span class="me-2">38%</span>
                                             <div>
-                                                <div class="progress" style="width:100px;height: 3px;">
+                                                <div class="progress" style="width: 70px;height: 3px;">
                                                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
                                                     </div>                                   
                                                 </div>
@@ -313,7 +424,229 @@
                                         <div class="d-flex align-items-center "> 
                                             <span class="me-2">38%</span>
                                             <div>
-                                                <div class="progress" style="width:100px;height: 3px;">
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-xsm">
+                                <td>
+                                    <div class="td-center">
+                                        <a class="text-heading font-semibold" href="#">Website Redesign</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        23-01-2022
+                                    </div> 
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <span class="badge-dot d-inline-block " ></span>
+                                        <span class="d-inline-block mx-1">In progress</span>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="td-center">
+                                        <div class="d-flex align-items-center "> 
+                                            <span class="me-2">38%</span>
+                                            <div>
+                                                <div class="progress" style="width: 70px;height: 3px;">
                                                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
                                                     </div>                                   
                                                 </div>
@@ -351,7 +684,7 @@
                                         <div class="d-flex align-items-center "> 
                                             <span class="me-2">38%</span>
                                             <div>
-                                                <div class="progress" style="width:100px;height: 3px;">
+                                                <div class="progress" style="width: 70px;height: 3px;">
                                                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
                                                     </div>                                   
                                                 </div>
@@ -389,7 +722,7 @@
                                         <div class="d-flex align-items-center "> 
                                             <span class="me-2">38%</span>
                                             <div>
-                                                <div class="progress" style="width:100px;height: 3px;">
+                                                <div class="progress" style="width: 70px;height: 3px;">
                                                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width:38%;height: 3px;">
                                                     </div>                                   
                                                 </div>
@@ -399,6 +732,7 @@
                                 </td>
                                 
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -422,7 +756,8 @@
     
 
     <script>
-
+    
+    
     var hh = 0;
     var mm = 0;
     var ss = 0;
@@ -437,6 +772,10 @@
     //Para o temporizador mas não limpa as variáveis
     function pause() {
         clearInterval(cron);
+    }
+
+    function pauseOFF(){
+        cron = setInterval(() => { timer(); }, tempo);
     }
 
     //Para o temporizador e limpa as variáveis
@@ -468,6 +807,7 @@
         
         //Insere o valor tratado no elemento counter
         document.getElementById('date').innerText = format;
+        document.getElementById('time').innerText = format;
 
         //Retorna o valor tratado
         return format;

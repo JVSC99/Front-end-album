@@ -17,7 +17,7 @@ function Logar(){
         containerLogin.innerHTML = "<div id='load'> <div id='loading'></div></div>"; 
         setTimeout(function(){
             renderMenu();
-        },10000)
+        },5000)
         alert('logado')
     }else{
         alert("Login ou senha incorreto")
@@ -28,5 +28,6 @@ function Logar(){
 function renderMenu(){
     containerLogin.innerHTML = ""
     body.style.backgroundImage = 'linear-gradient(gray,gray)'
+    window.location.href = "file:///C:/Users/jvsc7/OneDrive/%C3%81rea%20de%20Trabalho/Floow/principal.html#"
 
 }

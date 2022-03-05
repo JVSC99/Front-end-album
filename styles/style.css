@@ -62,6 +62,11 @@ bg-purple{
     font-size: .8125rem;
 }
 
+table{
+    height: 500px;
+    overflow: auto;
+}
+
 .td-no-avatar{
     padding-top: 1.4rem;
 }
